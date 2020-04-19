@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2017.
+  ~ Unauthorized copying as well as modification and distribution of this file is strictly prohibited
+  ~ Proprietary and confidential
+  ~ Written by Nikita Salomatin <nsalomatin@hotmail.com>
+  -->
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+                                 http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+
+    <persistence-unit name="test-mysql" transaction-type="RESOURCE_LOCAL">
+        <class>com.dreamservice.model.dao.models.Task</class>
+        <class>com.dreamservice.model.dao.models.Category</class>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/besmart?serverTimezone=UTC&#038;allowMultiQueries=true&#038;createDatabaseIfNotExist=true&#038;nullNamePatternMatchesAll=true" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="12345" />
+
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+            <property name="hibernate.show_sql" value="true" />
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="test-h2" transaction-type="RESOURCE_LOCAL">
+        <class>com.dreamservice.model.dao.models.Task</class>
+        <class>com.dreamservice.model.dao.models.Category</class>
+        <properties>
+            <property name="hibernate.connection.driver_class" value="org.hsqldb.jdbc.JDBCDriver"/>
+            <property name="hibernate.connection.url" value="jdbc:hsqldb:file:testdb"/>
+            <property name="hibernate.connection.username" value="SA"/>
+            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,29 @@
+{
+  "ResultObject": {
+    "Items": [
+      {
+        "id": 2371842,
+        "name": "Сделать сайт по образцу (скопировать с новым дизайном...",
+        "priceAmount": 9990,
+        "statusFlag": "process",
+        "category": "webdevelopment",
+        "isClosed": false,
+        "isMine": false,
+        "isDraft": false,
+        "taskOwner": {
+          "Id": 2650980,
+          "UserName": "Алексей",
+          "Rating": {
+            "PositiveReviews": 8,
+            "NegativeReviews": 0,
+            "SummaryScore": 0.0,
+            "SummaryReviews": 8
+          }
+        },
+        "ExecutorId": null,
+        "Viewed": false,
+        "IsRegular": false
+      }
+    ]
+  }
+}
