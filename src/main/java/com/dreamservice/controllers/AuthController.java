@@ -28,6 +28,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 public class AuthController {
 
     @RequestMapping(method = {GET, OPTIONS}, path = "/auth/signin")
+    @CrossOrigin(origins = {"http://localhost:63342", "https://artemignatiev908976.github.io/diplomTest", "http://localhost:5000", "http://arcane-waters-26008.herokuapp.com"})
     public ResponseEntity<?> getSessionId(@RequestParam(value = "login", defaultValue = "") String login,
                                              @RequestParam(value = "password", defaultValue = "") String password) {
 
@@ -46,6 +47,7 @@ public class AuthController {
     }
 
     @RequestMapping(method = {POST}, path = "/auth/signup")
+    @CrossOrigin(origins = {"http://localhost:63342", "https://artemignatiev908976.github.io/diplomTest", "http://localhost:5000", "http://arcane-waters-26008.herokuapp.com"})
     public ResponseEntity<?> createUser(@RequestParam(value = "login", defaultValue = "") String login,
                                         @RequestParam(value = "password", defaultValue = "") String password,
                                         @RequestParam(value = "firstName", defaultValue = "") String firstName,
